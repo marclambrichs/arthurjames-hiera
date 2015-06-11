@@ -1,0 +1,11 @@
+---
+classes:
+  - arthurjames::notify
+  - ntp
+
+ntp::restrict:
+  -
+ntp::enable: true
+ntp::servers:
+  - ntp.xs4all.nl
+  - ntp2.xs4all.nl

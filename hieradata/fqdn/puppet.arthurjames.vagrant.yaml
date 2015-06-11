@@ -1,0 +1,6 @@
+---
+::arthurjames::notify::message: This is the puppetmaster
+
+classes:
+  - arthurjames::role_puppetmaster
+  - arthurjames::role_node
