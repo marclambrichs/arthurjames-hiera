@@ -3,6 +3,8 @@ classes:
   - arthurjames::notify
   - ntp
 
+arthurjames::notify::message: message coming from common.yaml
+
 ntp::restrict:
   -
 ntp::enable: true

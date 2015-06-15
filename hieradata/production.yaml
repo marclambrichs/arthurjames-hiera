@@ -1,2 +1,2 @@
 ---
-::arthurjames::notify::message: This is the production environment
+arthurjames::notify::message: This is the production environment
