@@ -1,0 +1,5 @@
+---
+arthurjames::notify::message: This is the redis box.
+
+classes:
+  - arthurjames::role_node
