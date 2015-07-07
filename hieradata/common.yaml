@@ -11,3 +11,8 @@ ntp::enable: true
 ntp::servers:
   - ntp.xs4all.nl
   - ntp2.xs4all.nl
+
+arthurjames::profile_puppet::server_foreman_url: https://puppet.arthurjames.vagrant
+arthurjames::profile_puppet::server_puppetdb_host: puppet.arthurjames.vagrant
+arthurjames::profile_puppet::puppetmaster: puppet.arthurjames.vagrant
+arthurjames::profile_puppet::server_passenger: false
