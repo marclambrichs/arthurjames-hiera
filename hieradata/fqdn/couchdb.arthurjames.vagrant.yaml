@@ -3,4 +3,5 @@ arthurjames::notify::message: This is the couchdb box.
 
 classes:
   - arthurjames::role_node
+  - couchdb
 
