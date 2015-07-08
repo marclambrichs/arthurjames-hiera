@@ -2,6 +2,7 @@
 classes:
   - arthurjames::notify
   - ntp
+  - timezone
 
 arthurjames::notify::message: message coming from common.yaml
 
@@ -11,6 +12,7 @@ ntp::enable: true
 ntp::servers:
   - ntp.xs4all.nl
   - ntp2.xs4all.nl
+timezone::zone: Europe/Amsterdam
 
 arthurjames::profile_puppet::server_foreman_url: https://puppet.arthurjames.vagrant
 arthurjames::profile_puppet::server_puppetdb_host: puppet.arthurjames.vagrant
