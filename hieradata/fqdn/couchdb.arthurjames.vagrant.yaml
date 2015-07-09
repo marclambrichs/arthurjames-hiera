@@ -5,3 +5,6 @@ classes:
   - arthurjames::role_node
   - couchdb
 
+couchdb::db::dbname: hiera
+couchdb::db::source: https://www.apache.org/dyn/closer.cgi?path=/couchdb/source/1.6.1/apache-couchdb-1.6.1.tar.gz
+
