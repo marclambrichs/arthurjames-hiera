@@ -3,6 +3,6 @@ arthurjames::notify::message: This is the couchdb box.
 
 classes:
   - arthurjames::role_node
-  - couchdb
+  - arthurjames::profile_couchdb
 
 couchdb::couchdb_src_dir: /vagrant/files/couchdb
