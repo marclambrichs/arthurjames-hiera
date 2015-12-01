@@ -15,6 +15,6 @@ ntp::servers:
 timezone::zone: Europe/Amsterdam
 
 arthurjames::profile_puppet::server_foreman_url: https://puppet.arthurjames.vagrant
-arthurjames::profile_puppet::server_puppetdb_host: puppet.arthurjames.vagrant
 arthurjames::profile_puppet::puppetmaster: puppet.arthurjames.vagrant
 arthurjames::profile_puppet::server_passenger: false
+arthurjames::profile_puppet::server_puppetdb_host: puppet.arthurjames.vagrant
