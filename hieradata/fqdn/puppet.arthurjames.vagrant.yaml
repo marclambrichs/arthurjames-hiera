@@ -11,4 +11,3 @@ arthurjames::profile_puppet::server_ca: true
 arthurjames::profile_puppet::server_foreman: true
 arthurjames::profile_puppet::server_implementation: master
 arthurjames::profile_puppet::server_passenger: true
-arthurjames::profile_puppet::server_puppetdb_host: 127.0.0.1
