@@ -1,0 +1,5 @@
+---
+arthurjames::notify::message: This is graphite.puppet.arthurjames
+
+classes:
+  - arthurjames::role_node
