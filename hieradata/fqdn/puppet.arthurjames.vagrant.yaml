@@ -5,9 +5,10 @@ classes:
   - arthurjames::role_puppetmaster
   - arthurjames::role_node
 
-arthurjames::profile_puppet::runmode: service
 arthurjames::profile_puppet::server: true
 arthurjames::profile_puppet::server_ca: true
 arthurjames::profile_puppet::server_foreman: true
+arthurjames::profile_puppet::server_foreman_url: https://puppet.arthurjames.vagrant
 arthurjames::profile_puppet::server_implementation: master
 arthurjames::profile_puppet::server_passenger: true
+arthurjames::profile_puppet::server_puppetdb_host: puppet.arthurjames.vagrant
