@@ -12,3 +12,9 @@ arthurjames::profile_puppet::server_foreman_url: https://puppet.arthurjames.vagr
 arthurjames::profile_puppet::server_implementation: master
 arthurjames::profile_puppet::server_passenger: true
 arthurjames::profile_puppet::server_puppetdb_host: puppet.arthurjames.vagrant
+
+arthurjames::profile_puppetmaster::server_common_modules_path:
+  - "${server_envs_dir}/common"
+  - "${codedir}/modules"
+  - "${sharedir}/modules"
+  - "/vagrant/puppet/modules"
