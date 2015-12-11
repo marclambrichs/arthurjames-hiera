@@ -5,6 +5,9 @@ classes:
   - arthurjames::role_puppetmaster
   - arthurjames::role_node
 
+arthurjames::profile_puppet::dns_alt_names:
+  - $::fqdn
+  - puppetdb
 arthurjames::profile_puppet::server: true
 arthurjames::profile_puppet::server_ca: true
 arthurjames::profile_puppet::server_foreman: true
