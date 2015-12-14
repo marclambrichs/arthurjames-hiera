@@ -7,9 +7,9 @@ classes:
 
 arthurjames::profile_puppet::server: true
 arthurjames::profile_puppet::server_ca: true
+arthurjames::profile_puppet::server_common_modules_path:
+  - /vagrant/modules
 arthurjames::profile_puppet::server_foreman: true
 arthurjames::profile_puppet::server_implementation: master
 arthurjames::profile_puppet::server_passenger: false
 
-arthurjames::profile_puppetmaster::server_common_modules_path:
-  - /vagrant/modules
