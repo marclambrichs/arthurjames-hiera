@@ -6,19 +6,32 @@ classes:
   - arthurjames::role_graphite
 
 carbon_relay::config_rewrites:
-  comments: |
-    ## rewrite carbon c relay internal statistics
-    ## from carbon.relays.twiki501.back.test.bc.local.metricsQueued
-    ## into bc.test.twiki.twiki501.relay.metricsQueued
   rewrite1:
-    from: '^carbon\.relays\.([a-zA-Z]+)([0-9]+)_([a-zA-Z0-9]+)_([a-zA-Z0-9]+)_([a-zA-Z0-9]+)_([a-zA-Z0-9]+)\.(.*)'
-    into: '\5.\4.\1.\1\2.relay.\7'
-  rewrite2:
     comments: |
       ## rewrite carbon c relay internal statistics
       ## from carbon.relays.twiki501.back.test.bc.local.metricsQueued
       ## into bc.test.twiki.twiki501.relay.metricsQueued
     from: '^carbon\.relays\.([a-zA-Z]+)([0-9]+)_([a-zA-Z0-9]+)_([a-zA-Z0-9]+)_([a-zA-Z0-9]+)_([a-zA-Z0-9]+)\.(.*)'
     into: '\5.\4.\1.\1\2.relay.\7'
-
-
+  rewrite2:
+    comments: |
+      ## rewrite metrics to reverse hostname
+      ## from twiki501.back.test.bc.local.haggar.agent.0.metrics.0
+      ## into bc.test.twiki.twiki501.haggar.agent.0.metrics.0
+    from: '^([a-zA-Z]+)([0-9]+)\.back\.([a-zA-Z0-9]+)\.([a-zA-Z0-9]+)\.local(.*)'
+    into: '\4.\3.\1\.\1\2\5'
+  rewrite3:
+    comments: |
+      ## rewrite metrics from statsite
+      ## forom sandbox.test.twiki.twiki001.statsite.gauges.gunicorn.workers
+      ## from twiki001.back.test.sandbox.local.statsite.gauges.gunicorn.workers
+      ## into sandbox.test.twiki.twiki001.statsite.gunicorn.gauges.workers
+    from: '^([a-zA-Z0-9]+)\.([a-zA-Z0-9]+)\.([a-zA-Z0-9]+)\.([a-zA-Z]+)([0-9]+)\.statsite\.([a-zA-Z]+)\.([a-zA-Z]+)\.(.*)'
+    into: '\1.\2.\3.\4\5.statsite.\7.\6.\8'
+  rewrite4:
+    comments: |
+      ## clean up statsite numstats metric
+      ## from sandbox.test.twiki.twiki001.statsite.counts.numStats
+      ## into sandbox.test.twiki.twiki001.statsite.numStats
+    from: '^([a-zA-Z0-9]+)\.([a-zA-Z0-9]+)\.([a-zA-Z0-9]+)\.([a-zA-Z]+)([0-9]+)\.statsite\.counts\.(.*)'
+    into: '\1.\2.\3.\4\5.statsite.\6'
