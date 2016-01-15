@@ -1,5 +1,5 @@
 ---
-arthurjames::notify::message: This is graphite.puppet.arthurjames
+arthurjames::notify::message: This is graphite.arthurjames.vagrant
 
 classes:
   - arthurjames::role_node
