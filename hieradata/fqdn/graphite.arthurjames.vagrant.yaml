@@ -5,7 +5,7 @@ classes:
   - arthurjames::role_node
   - arthurjames::role_graphite
 
-carbon_relay::config_rewrites:
+carbon_c_relay::config_rewrites:
   rewrite1:
     comments: |
       ## rewrite carbon c relay internal statistics
