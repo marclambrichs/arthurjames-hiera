@@ -5,6 +5,20 @@ classes:
   - arthurjames::role_node
   - arthurjames::role_graphite
 
+carbon_c_relay::clusters:
+  local_carbon:
+    forward_proto: 'forward'
+    replication_factor: 2
+    hosts:
+      - ip: '127.0.0.1'
+        port: 2013
+        proto: 'tcp'
+      - ip: '127.0.0.1'
+        port: 2014
+        proto: 'tcp'
+  local_file:
+    forward_proto: 'file'
+    file: '/tmp/ccr.log'
 carbon_c_relay::config_rewrites:
   rewrite1:
     comments: |
