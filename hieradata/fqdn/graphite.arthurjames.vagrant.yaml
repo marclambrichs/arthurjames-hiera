@@ -7,7 +7,6 @@ classes:
 
 carbon_c_relay::clusters:
   local_carbon:
-    forward_proto: 'forward'
     replication_factor: 2
     hosts:
       - ip: '127.0.0.1'
