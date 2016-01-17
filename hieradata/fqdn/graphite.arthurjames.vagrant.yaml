@@ -5,7 +5,7 @@ classes:
   - arthurjames::role_node
   - arthurjames::role_graphite
 
-carbon_c_relay::clusters:
+carbon_c_relay::config_clusters:
   local_carbon:
     replication_factor: 2
     hosts:
@@ -19,7 +19,7 @@ carbon_c_relay::clusters:
     forward_proto: 'file'
     file: '/tmp/ccr.log'
 carbon_c_relay::config_matches:
-  *:
+  '*':
     cluster_name: 'local_file'
     stop: true
 carbon_c_relay::config_rewrites:
