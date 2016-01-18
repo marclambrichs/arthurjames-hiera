@@ -40,7 +40,7 @@ carbon_c_relay::config_rewrites:
   rewrite3:
     comments: |
       ## rewrite metrics from statsite
-      ## forom sandbox.test.twiki.twiki001.statsite.gauges.gunicorn.workers
+      ## from sandbox.test.twiki.twiki001.statsite.gauges.gunicorn.workers
       ## from twiki001.back.test.sandbox.local.statsite.gauges.gunicorn.workers
       ## into sandbox.test.twiki.twiki001.statsite.gunicorn.gauges.workers
     from: '^([a-zA-Z0-9]+)\.([a-zA-Z0-9]+)\.([a-zA-Z0-9]+)\.([a-zA-Z]+)([0-9]+)\.statsite\.([a-zA-Z]+)\.([a-zA-Z]+)\.(.*)'
