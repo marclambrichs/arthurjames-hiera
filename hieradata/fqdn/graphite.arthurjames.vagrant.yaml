@@ -8,7 +8,7 @@ classes:
 carbon_c_relay::config_clusters:
   i.arthurjames.vagrant:
     replication_factor: 1
-    channel: 'carbon_ch
+    channel: 'carbon_ch'
     hosts:
       - host: 'i.arthurjames.vagrant'
         port: 2203
@@ -36,7 +36,7 @@ carbon_c_relay::config_clusters:
         proto: 'tcp'
   d.arthurjames.vagrant:
     replication_factor: 1
-    channel: 'carbon_ch
+    channel: 'carbon_ch'
     hosts:
       - host: 'd.arthurjames.vagrant'
         port: 2203
