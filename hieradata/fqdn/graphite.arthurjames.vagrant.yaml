@@ -13,27 +13,21 @@ carbon_c_relay::config_clusters:
       - host: 'i.arthurjames.vagrant'
         port: 2203
         alias: 'a'
-        proto: 'tcp'
       - host: 'i.arthurjames.vagrant'
         port: 2303
         alias: 'b'
-        proto: 'tcp'
       - host: 'i.arthurjames.vagrant'
         port: 2403
         alias: 'c'
-        proto: 'tcp'
       - host: 'i.arthurjames.vagrant'
         port: 2503
         alias: 'd'
-        proto: 'tcp'
       - host: 'i.arthurjames.vagrant'
         port: 2603
         alias: 'e'
-        proto: 'tcp'
       - host: 'i.arthurjames.vagrant'
         port: 2703
         alias: 'f'
-        proto: 'tcp'
   d.arthurjames.vagrant:
     replication_factor: 1
     channel: 'carbon_ch'
@@ -41,27 +35,21 @@ carbon_c_relay::config_clusters:
       - host: 'd.arthurjames.vagrant'
         port: 2203
         alias: 'a'
-        proto: 'tcp'
       - host: 'd.arthurjames.vagrant'
         port: 2303
         alias: 'b'
-        proto: 'tcp'
       - host: 'd.arthurjames.vagrant'
         port: 2403
         alias: 'c'
-        proto: 'tcp'
       - host: 'd.arthurjames.vagrant'
         port: 2503
         alias: 'd'
-        proto: 'tcp'
       - host: 'd.arthurjames.vagrant'
         port: 2603
         alias: 'e'
-        proto: 'tcp'
       - host: 'd.arthurjames.vagrant'
         port: 2703
         alias: 'f'
-        proto: 'tcp'
   local_file:
     forward_proto: 'file'
     file: '/tmp/ccr.log'
