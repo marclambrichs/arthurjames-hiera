@@ -9,8 +9,8 @@ arthurjames::profile_collectd::plugin_genericjmx: true
 arthurjames::profile_collectd::plugin_genericjmx_mbean_params:
   garbage_collector:
     object_name: 'java.lang:type=GarbageCollector,*'
-    instance_prefix: 'gc-',
-    instance_from: 'name',
+    instance_prefix: 'gc-'
+    instance_from: 'name'
     values:
       - type: 'invocations'
         table: false
@@ -21,9 +21,9 @@ arthurjames::profile_collectd::plugin_genericjmx_mbean_params:
         attribute: 'CollectionTime'
 arthurjames::profile_collectd::plugin_genericjmx_connection_params:
   java_app:
-    host: $fqdn
-    service_url: 'service:jmx:rmi:///jndi/rmi://localhost:3637/jmxrmi',
-    collect: 
+    host: "%{::fqdn}"
+    service_url: 'service:jmx:rmi:///jndi/rmi://localhost:3637/jmxrmi'
+    collect:
       - 'memory-heap'
       - 'memory-nonheap'
       - 'garbage_collector'
