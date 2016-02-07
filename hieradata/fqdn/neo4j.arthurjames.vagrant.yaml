@@ -6,6 +6,8 @@ classes:
   - arthurjames::role_neo4j
 
 arthurjames::role_neo4j::neo4j_enabled: true
-resolv_conf::nameservers: 
-  - 8.8.8.8
 
+neo4j::address: '0.0.0.0'
+neo4j::version: '2.3.2'
+neo4j::edition: 'enterprise'
+neo4j::http_log_dir: '/var/log/neo4j'
