@@ -6,4 +6,6 @@ classes:
   - arthurjames::role_neo4j
 
 arthurjames::role_neo4j::neo4j_enabled: true
+resolv_conf::nameservers: 
+  - 8.8.8.8
 
