@@ -5,8 +5,12 @@ classes:
   - arthurjames::role_node
   - arthurjames::role_graphite
 
+ntp::servers:
+  - ntp.xs4all.nl
+  - ntp2.xs4all.nl
+
 arthurjames::role_graphite::collectd_enabled: true
-arthurjames::role_graphite::graphite_enabled: true
+arthurjames::role_graphite::graphite_enabled: false
 
 arthurjames::profile-relay::relay_type: 'carbon-relay-ng'
 
