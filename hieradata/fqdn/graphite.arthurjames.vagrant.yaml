@@ -8,7 +8,7 @@ classes:
 arthurjames::role_graphite::collectd_enabled: true
 arthurjames::role_graphite::graphite_enabled: true
 
-arthurjames::profile_relay::relay_type: 'carbon-c-relay'
+arthurjames::profile-relay::relay_type: 'carbon-relay-ng'
 
 arthurjames::profile_collectd::plugin_genericjmx: true
 arthurjames::profile_collectd::plugin_genericjmx_mbean_params:
