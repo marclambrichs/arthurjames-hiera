@@ -4,6 +4,7 @@ arthurjames::notify::message: This is graphite.arthurjames.vagrant
 classes:
   - arthurjames::role_node
   - arthurjames::role_graphite
+  - arthurjames::profile_relay
 
 ntp::servers:
   - ntp.xs4all.nl
@@ -12,7 +13,7 @@ ntp::servers:
 arthurjames::role_graphite::collectd_enabled: true
 arthurjames::role_graphite::graphite_enabled: false
 
-arthurjames::profile-relay::relay_type: 'carbon-relay-ng'
+arthurjames::profile_relay::relay_type: 'carbon-c-relay'
 
 arthurjames::profile_collectd::plugin_genericjmx: true
 arthurjames::profile_collectd::plugin_genericjmx_mbean_params:
@@ -38,50 +39,50 @@ arthurjames::profile_collectd::plugin_genericjmx_connection_params:
       - 'garbage_collector'
     
 carbon_c_relay::config_clusters:
-  i.arthurjames.vagrant:
+  localhost:
     replication_factor: 1
     channel: 'carbon_ch'
     hosts:
-      - host: 'i.arthurjames.vagrant'
+      - host: 'localhost'
         port: 2203
         alias: 'a'
-      - host: 'i.arthurjames.vagrant'
+      - host: 'localhost'
         port: 2303
         alias: 'b'
-      - host: 'i.arthurjames.vagrant'
+      - host: 'localhost'
         port: 2403
         alias: 'c'
-      - host: 'i.arthurjames.vagrant'
+      - host: 'localhost'
         port: 2503
         alias: 'd'
-      - host: 'i.arthurjames.vagrant'
+      - host: 'localhost'
         port: 2603
         alias: 'e'
-      - host: 'i.arthurjames.vagrant'
+      - host: 'localhost'
         port: 2703
         alias: 'f'
-  d.arthurjames.vagrant:
-    replication_factor: 1
-    channel: 'carbon_ch'
-    hosts:
-      - host: 'd.arthurjames.vagrant'
-        port: 2203
-        alias: 'a'
-      - host: 'd.arthurjames.vagrant'
-        port: 2303
-        alias: 'b'
-      - host: 'd.arthurjames.vagrant'
-        port: 2403
-        alias: 'c'
-      - host: 'd.arthurjames.vagrant'
-        port: 2503
-        alias: 'd'
-      - host: 'd.arthurjames.vagrant'
-        port: 2603
-        alias: 'e'
-      - host: 'd.arthurjames.vagrant'
-        port: 2703
-        alias: 'f'
+#  d.arthurjames.vagrant:
+#    replication_factor: 1
+#    channel: 'carbon_ch'
+#    hosts:
+#      - host: 'd.arthurjames.vagrant'
+#        port: 2203
+#        alias: 'a'
+#      - host: 'd.arthurjames.vagrant'
+#        port: 2303
+#        alias: 'b'
+#      - host: 'd.arthurjames.vagrant'
+#        port: 2403
+#        alias: 'c'
+#      - host: 'd.arthurjames.vagrant'
+#        port: 2503
+#        alias: 'd'
+#      - host: 'd.arthurjames.vagrant'
+#        port: 2603
+#        alias: 'e'
+#      - host: 'd.arthurjames.vagrant'
+#        port: 2703
+#        alias: 'f'
   local_file:
     forward_proto: 'file'
     file: '/tmp/ccr.log'
