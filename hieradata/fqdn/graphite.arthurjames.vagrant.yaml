@@ -42,11 +42,13 @@ carbon::cc_carbon_caches:
   a:
     cache_query_port: 7002
     line_receiver_port: 2203
+    pickle_receiver_port: 2204
     udp_receiver_port: 2203 
   b:
     cache_query_port: 7003
     line_receiver_port: 2303
     udp_receiver_port: 2303 
+    pickle_receiver_port: 2304
     
 carbon_c_relay::config_clusters:
   localhost:
