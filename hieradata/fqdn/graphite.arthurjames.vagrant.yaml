@@ -40,9 +40,11 @@ arthurjames::profile_collectd::plugin_genericjmx_connection_params:
 
 carbon::cc_carbon_caches:
   a:
+    cache_query_port: 7002
     line_receiver_port: 2203
     udp_receiver_port: 2203 
   b:
+    cache_query_port: 7003
     line_receiver_port: 2303
     udp_receiver_port: 2303 
     
