@@ -37,6 +37,14 @@ arthurjames::profile_collectd::plugin_genericjmx_connection_params:
       - 'memory-heap'
       - 'memory-nonheap'
       - 'garbage_collector'
+
+carbon::cc_carbon_caches:
+  a:
+    line_receiver_port: 2203
+    udp_receiver_port: 2203 
+  b:
+    line_receiver_port: 2303
+    udp_receiver_port: 2303 
     
 carbon_c_relay::config_clusters:
   localhost:
