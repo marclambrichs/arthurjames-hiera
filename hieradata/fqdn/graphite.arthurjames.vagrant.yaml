@@ -61,18 +61,6 @@ carbon_c_relay::config_clusters:
       - host: 'localhost'
         port: 2303
         alias: 'b'
-      - host: 'localhost'
-        port: 2403
-        alias: 'c'
-      - host: 'localhost'
-        port: 2503
-        alias: 'd'
-      - host: 'localhost'
-        port: 2603
-        alias: 'e'
-      - host: 'localhost'
-        port: 2703
-        alias: 'f'
 #  d.arthurjames.vagrant:
 #    replication_factor: 1
 #    channel: 'carbon_ch'
