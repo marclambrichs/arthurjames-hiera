@@ -14,6 +14,12 @@ ntp::servers:
   - ntp2.xs4all.nl
 timezone::zone: Europe/Amsterdam
 
+arthurjames::role_node::nameservers:
+  - 10.0.2.3
+
+arthurjames::role_node::serchpath:
+  - 'arthurjames.vagrant'
+
 arthurjames::profile_puppet::runmode: service
 arthurjames::profile_puppet::server_foreman_url: https://puppet.arthurjames.vagrant
 arthurjames::profile_puppet::puppetmaster: puppet.arthurjames.vagrant
