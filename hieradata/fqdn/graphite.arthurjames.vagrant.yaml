@@ -10,6 +10,9 @@ ntp::servers:
   - ntp.xs4all.nl
   - ntp2.xs4all.nl
 
+apache::default_vhost: false
+apache::apache_version: '2.4'
+
 arthurjames::role_graphite::collectd_enabled: true
 arthurjames::role_graphite::graphite_enabled: true
 
