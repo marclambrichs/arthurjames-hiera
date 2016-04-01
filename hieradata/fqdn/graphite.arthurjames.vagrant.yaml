@@ -41,7 +41,7 @@ arthurjames::profile_collectd::plugin_genericjmx_connection_params:
       - 'memory-nonheap'
       - 'garbage_collector'
 
-carbon::cc_carbon_caches:
+arthurjames::profile_graphite::carbon_caches:
   a:
     cache_query_port: 7002
     line_receiver_port: 2203
