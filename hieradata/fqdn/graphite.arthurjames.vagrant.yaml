@@ -15,7 +15,78 @@ apache::apache_version: '2.4'
 
 graphite_web::ls_content_dir: '/usr/share/graphite/webapp/content'
 graphite_web::ls_conf_dir: '/etc/carbon'
+graphite_web::ls_log_dir: '/var/log/graphite-web'
 graphite_web::ls_storage_dir: '/var/lib/carbon'
+graphite_web::ls_whisper_dir: '/var/lib/carbon/whisper'
+
+graphite_web::vhosts:
+  graphite.arthurjames.vagrant:
+    serveraliases:
+      - 'graphite2.arthurjames.vagrant'
+    docroot: '/usr/share/graphite/webapp'
+    redirect_dest: "https://%{::fqdn}/"
+    redirect_status: 'permanent'
+    directories:
+      - provider: 'location'
+        path: '/server-status'
+        sethandler: 'server-status'
+        require: 'ip 127.0.0.1'
+  ssl-graphite.arthurjames.vagrant:
+    access_logs:
+      - file: "/var/log/httpd/%{name}.ssl_access.log"
+        format: combined
+    directories:
+      - auth_basic_provider: 'file'
+#        auth_basic_provider: 'file ldap'
+        auth_name: 'userid'
+        auth_type: 'Basic'
+        auth_user_file: '/etc/graphite-web/htaccess'
+#        custom_fragment: |
+  #AuthLDAPURL "ldaps://%{name}/ou=People, o=ing"
+  #<LimitExcept OPTIONS>
+  #  Require valid-user
+  #</LimitExcept>
+        path: '/usr/share/graphite'
+        provider: 'directory'
+        sethandler: 'None'
+      - path: '/content/'
+        provider: 'location'
+        sethandler: 'None'
+      - path: '/media/'
+        provider: 'location'
+        sethandler: 'None'
+      - path: '/admin/'
+        provider: 'location'
+        require: 'ip 127.0.0.1'
+    docroot: '/usr/share/graphite/webapp'
+    error_log_file: "%{::hostname}.ssl_error.log"
+    headers:
+      - 'always set X-Content-Type-Options nosniff'
+#      - 'always set Access-Control-Allow-Origin %%{EMPTY}{AccessControlAllowOrigin} env=AccessControlAllowOrigin'
+      - 'always set Access-Control-Allow-Origin "*"'
+      - 'always set Access-Control-Allow-Methods "DELETE, PUT, GET, POST, OPTIONS"'
+      - 'always set Access-Control-Allow-Headers "origin, accept, X-Requested-With, Content-Type, authorization"'
+      - 'always set Access-Control-Allow-Credentials true'
+    port: 443
+    serveraliases:
+      - 'ssl-graphite2.arthurjames.vagrant'
+    ssl: true
+    ssl_cert: '/etc/pki/tls/certs/%{::fqdn}.crt'
+    ssl_key: '/etc/pki/tls/private/%{::fqdn}.key.nopass'
+    wsgi_application_group: '%%{EMPTY}{GLOBAL}'
+    wsgi_daemon_process: 'graphite'
+    wsgi_daemon_process_options:
+      processes: 8
+      threads: 5
+      display-name: '"%%{EMPTY}{GROUP}"'
+      inactivity-timeout: 120
+    wsgi_import_script: '/usr/share/graphite/graphite-web.wsgi'
+    wsgi_import_script_options:
+      process-group: 'graphite'
+      application-group: '%%{EMPTY}{GLOBAL}'
+    wsgi_process_group: 'graphite'
+    wsgi_script_aliases:
+      /: '/usr/share/graphite/graphite-web.wsgi'
 
 arthurjames::role_graphite::collectd_enabled: true
 arthurjames::role_graphite::graphite_enabled: true
