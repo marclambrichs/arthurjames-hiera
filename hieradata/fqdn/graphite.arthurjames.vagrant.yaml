@@ -13,6 +13,10 @@ ntp::servers:
 apache::default_vhost: false
 apache::apache_version: '2.4'
 
+graphite_web::ls_content_dir: '/usr/share/graphite/webapp/content'
+graphite_web::ls_conf_dir: '/etc/carbon'
+graphite_web::ls_storage_dir: '/var/lib/carbon'
+
 arthurjames::role_graphite::collectd_enabled: true
 arthurjames::role_graphite::graphite_enabled: true
 
