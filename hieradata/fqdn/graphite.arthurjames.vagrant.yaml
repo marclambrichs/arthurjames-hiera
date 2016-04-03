@@ -23,6 +23,9 @@ graphite_web::ls_whisper_dir: '/var/lib/carbon/whisper'
 
 graphite_web::vhosts:
   graphite.arthurjames.vagrant:
+    access_logs:
+      - file: "/var/log/httpd/%{::hostname}.access.log"
+        format: combined
     serveraliases:
       - 'graphite2.arthurjames.vagrant'
     docroot: '/usr/share/graphite/webapp'
@@ -33,9 +36,10 @@ graphite_web::vhosts:
         path: '/server-status'
         sethandler: 'server-status'
         require: 'ip 127.0.0.1'
+    error_log_file: "%{::hostname}.error.log"
   ssl-graphite.arthurjames.vagrant:
     access_logs:
-      - file: "/var/log/httpd/%{name}.ssl_access.log"
+      - file: "/var/log/httpd/%{hostname}.ssl.access.log"
         format: combined
     directories:
       - auth_basic_provider: 'file'
@@ -61,7 +65,7 @@ graphite_web::vhosts:
         provider: 'location'
         require: 'ip 127.0.0.1'
     docroot: '/usr/share/graphite/webapp'
-    error_log_file: "%{::hostname}.ssl_error.log"
+    error_log_file: "%{::hostname}.ssl.error.log"
     headers:
       - 'always set X-Content-Type-Options nosniff'
 #      - 'always set Access-Control-Allow-Origin %%{EMPTY}{AccessControlAllowOrigin} env=AccessControlAllowOrigin'
