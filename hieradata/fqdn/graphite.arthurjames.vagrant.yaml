@@ -176,7 +176,7 @@ carbon_c_relay::config_clusters:
     file: '/tmp/ccr.log'
 carbon_c_relay::config_matches:
   '*':
-    cluster_name: 'local_file'
+    cluster_name: 'localhost'
     stop: true
 carbon_c_relay::config_rewrites:
   rewrite1:
