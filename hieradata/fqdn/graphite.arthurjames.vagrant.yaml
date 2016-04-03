@@ -6,6 +6,12 @@ classes:
   - arthurjames::role_graphite
   - arthurjames::profile_relay
 
+### Roles
+arthurjames::role_graphite::collectd_enabled: true
+arthurjames::role_graphite::graphite_enabled: true
+arthurjames::role_graphite::memcached_enabled: true
+
+### Modules
 ntp::servers:
   - ntp.xs4all.nl
   - ntp2.xs4all.nl
@@ -94,9 +100,7 @@ graphite_web::vhosts:
     wsgi_script_aliases:
       /: '/usr/share/graphite/graphite-web.wsgi'
 
-arthurjames::role_graphite::collectd_enabled: true
-arthurjames::role_graphite::graphite_enabled: true
-
+### Profiles
 arthurjames::profile_relay::relay_type: 'carbon-c-relay'
 
 arthurjames::profile_collectd::plugin_genericjmx: true
