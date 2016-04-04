@@ -20,15 +20,15 @@ ntp::servers:
 apache::default_vhost: false
 apache::apache_version: '2.4'
 
-graphite_web::ls_content_dir: '/usr/share/graphite/webapp/content'
-graphite_web::ls_conf_dir: '/etc/carbon'
-graphite_web::ls_db_name: '/var/lib/graphite-web/graphite.db'
-graphite_web::ls_db_engine: 'django.db.backends.sqlite3'
-graphite_web::ls_log_dir: '/var/log/graphite-web'
-graphite_web::ls_storage_dir: '/var/lib/carbon'
-graphite_web::ls_whisper_dir: '/var/lib/carbon/whisper'
+graphite_frontend::ls_content_dir: '/usr/share/graphite/webapp/content'
+graphite_frontend::ls_conf_dir: '/etc/carbon'
+graphite_frontend::ls_db_name: '/var/lib/graphite-web/graphite.db'
+graphite_frontend::ls_db_engine: 'django.db.backends.sqlite3'
+graphite_frontend::ls_log_dir: '/var/log/graphite-web'
+graphite_frontend::ls_storage_dir: '/var/lib/carbon'
+graphite_frontend::ls_whisper_dir: '/var/lib/carbon/whisper'
 
-graphite_web::vhosts:
+graphite_frontend::vhosts:
   graphite.arthurjames.vagrant:
     access_logs:
       - file: "/var/log/httpd/%{::hostname}.access.log"
