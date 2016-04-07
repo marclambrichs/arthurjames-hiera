@@ -4,13 +4,13 @@ arthurjames::notify::message: This is graphite.arthurjames.vagrant
 classes:
   - arthurjames::role_node
   - arthurjames::role_graphite
-  - arthurjames::profile_relay
 
 ### Roles
 arthurjames::role_graphite::collectd_enabled: true
 arthurjames::role_graphite::grafana_enabled: true
 arthurjames::role_graphite::graphite_enabled: true
 arthurjames::role_graphite::memcached_enabled: true
+arthurjames::role_graphite::relay_enabled: true
 
 ### Modules
 ntp::servers:
@@ -20,15 +20,15 @@ ntp::servers:
 apache::default_vhost: false
 apache::apache_version: '2.4'
 
-graphite_frontend::ls_content_dir: '/usr/share/graphite/webapp/content'
-graphite_frontend::ls_conf_dir: '/etc/carbon'
-graphite_frontend::ls_db_name: '/var/lib/graphite-web/graphite.db'
-graphite_frontend::ls_db_engine: 'django.db.backends.sqlite3'
-graphite_frontend::ls_log_dir: '/var/log/graphite-web'
-graphite_frontend::ls_storage_dir: '/var/lib/carbon'
-graphite_frontend::ls_whisper_dir: '/var/lib/carbon/whisper'
+#graphite_frontend::ls_content_dir: '/usr/share/graphite/webapp/content'
+#graphite_frontend::ls_conf_dir: '/etc/carbon'
+#graphite_frontend::ls_db_name: '/var/lib/graphite-web/graphite.db'
+#graphite_frontend::ls_db_engine: 'django.db.backends.sqlite3'
+#graphite_frontend::ls_log_dir: '/var/log/graphite-web'
+#graphite_frontend::ls_storage_dir: '/var/lib/carbon'
+#graphite_frontend::ls_whisper_dir: '/var/lib/carbon/whisper'
 
-graphite_frontend::vhosts:
+arthurjames::profile_graphite::vhosts:
   graphite.arthurjames.vagrant:
     access_logs:
       - file: "/var/log/httpd/%{::hostname}.access.log"
