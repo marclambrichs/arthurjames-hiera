@@ -11,7 +11,7 @@ arthurjames::role_graphite::grafana_enabled: true
 arthurjames::role_graphite::graphite_enabled: true
 arthurjames::role_graphite::logrotate_enabled: true
 arthurjames::role_graphite::memcached_enabled: true
-arthurjames::role_graphite::postgresl_enabled: true
+arthurjames::role_graphite::postgresql_enabled: true
 arthurjames::role_graphite::relay_enabled: true
 
 ### Modules
@@ -22,11 +22,11 @@ ntp::servers:
 apache::default_vhost: false
 apache::apache_version: '2.4'
 
-arthurjames::profile_postgres::databases:
+arthurjames::profile_postgresql::databases:
   grafana:
-    password: 'postgresql_password(\\'grafana\\', \\'changeme\\')
+    password: 'postgresql_password("grafana", "changeme")'
     user: 'grafana'
-arthurjames::profile_postgres::datadir: '/var/lib/pgsql/data'
+arthurjames::profile_postgresql::datadir: '/var/lib/pgsql/data'
 
 arthurjames::profile_grafana::db_datadir: '/var/lib/pgsql/data'
 arthurjames::profile_grafana::db_host: '127.0.0.1:5432'
