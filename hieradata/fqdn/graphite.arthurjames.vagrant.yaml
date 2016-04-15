@@ -9,6 +9,7 @@ classes:
 arthurjames::role_graphite::collectd_enabled: true
 arthurjames::role_graphite::grafana_enabled: true
 arthurjames::role_graphite::graphite_enabled: true
+arthurjames::role_graphite::logrotate_enabled: true
 arthurjames::role_graphite::memcached_enabled: true
 arthurjames::role_graphite::relay_enabled: true
 
