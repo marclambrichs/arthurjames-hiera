@@ -11,6 +11,7 @@ arthurjames::role_graphite::grafana_enabled: true
 arthurjames::role_graphite::graphite_enabled: true
 arthurjames::role_graphite::logrotate_enabled: true
 arthurjames::role_graphite::memcached_enabled: true
+arthurjames::role_graphite::postgresl_enabled: true
 arthurjames::role_graphite::relay_enabled: true
 
 ### Modules
@@ -21,13 +22,17 @@ ntp::servers:
 apache::default_vhost: false
 apache::apache_version: '2.4'
 
-#graphite_frontend::ls_content_dir: '/usr/share/graphite/webapp/content'
-#graphite_frontend::ls_conf_dir: '/etc/carbon'
-#graphite_frontend::ls_db_name: '/var/lib/graphite-web/graphite.db'
-#graphite_frontend::ls_db_engine: 'django.db.backends.sqlite3'
-#graphite_frontend::ls_log_dir: '/var/log/graphite-web'
-#graphite_frontend::ls_storage_dir: '/var/lib/carbon'
-#graphite_frontend::ls_whisper_dir: '/var/lib/carbon/whisper'
+arthurjames::profile_postgres::databases:
+  grafana:
+    password: 'postgresql_password(\\'grafana\\', \\'changeme\\')
+    user: 'grafana'
+arthurjames::profile_postgres::datadir: '/var/lib/pgsql/data'
+
+arthurjames::profile_grafana::db_datadir: '/var/lib/pgsql/data'
+arthurjames::profile_grafana::db_host: '127.0.0.1:5432'
+arthurjames::profile_grafana::db_name: 'grafana'
+arthurjames::profile_grafana::db_user: 'grafana'
+arthurjames::profile_grafana::db_password: 'changeme'
 
 arthurjames::profile_graphite::vhosts:
   graphite.arthurjames.vagrant:
