@@ -1,0 +1,10 @@
+---
+classes:
+  - arthurjames::role_node
+
+### Roles
+
+### Modules
+ntp::servers:
+  - ntp.xs4all.nl
+  - ntp2.xs4all.nl
