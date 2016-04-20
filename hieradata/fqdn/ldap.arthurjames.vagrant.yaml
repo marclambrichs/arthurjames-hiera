@@ -4,7 +4,7 @@ classes:
   - arthurjames::role_ldap
 
 ### Roles
-ldap::entries:
+arthurjames::profile_openldap::entries:
   "%{dn}":
     attributes:
       dc: "%{dc}"
