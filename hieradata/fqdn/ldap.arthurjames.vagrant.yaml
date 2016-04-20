@@ -4,6 +4,39 @@ classes:
   - arthurjames::role_ldap
 
 ### Roles
+ldap::entries:
+  "%{dn}":
+    attributes:
+      dc: "%{dc}"
+      objectClass:
+        - top
+        - domain
+      description: 'Tree root'
+  "ou=users,%{dn}":
+    attributes:
+      ou: 'users'
+      objectClass:
+        - top
+        - organizationalUnit
+      description: "Users for %{dn}"
+  "ou=groups,%{dn}":
+    attributes:
+      ou: 'groups'
+      objectClass:
+        - top
+        - organizationalUnit
+      description: "Groups for %{dn}"
+  "cn=user,ou=users,%{dn}":
+    attributes:
+      cn: 'user'
+      objectClass:
+        - top
+        - person
+        - organizationalPerson
+        - inetOrgPerson
+      uid: 'user'
+      sn: 'user'
+      userPassword: "%{password}"
 
 ### Modules
 ntp::servers:
