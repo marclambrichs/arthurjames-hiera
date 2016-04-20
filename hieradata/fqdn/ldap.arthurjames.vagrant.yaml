@@ -1,6 +1,7 @@
 ---
 classes:
   - arthurjames::role_node
+  - arthurjames::role_ldap
 
 ### Roles
 
