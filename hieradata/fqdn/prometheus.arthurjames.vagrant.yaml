@@ -1,0 +1,9 @@
+---
+classes:
+  - arthurjames::role_node
+  - arthurjames::role_prometheus
+
+### Modules
+ntp::servers:
+  - ntp.xs4all.nl
+  - ntp2.xs4all.nl
