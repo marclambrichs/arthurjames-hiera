@@ -24,6 +24,9 @@ arthurjames::profile_grafana::db_host: '127.0.0.1:5432'
 arthurjames::profile_grafana::db_name: 'grafana'
 arthurjames::profile_grafana::db_user: 'grafana'
 arthurjames::profile_grafana::db_password: 'changeme'
+arthurjames::profile_grafana::vhosts:
+  prometheus.arthurjames.vagrant:
+    proxy_dest: 'http://127.0.0.1:3000'
 
 ### Modules
 ntp::servers:
