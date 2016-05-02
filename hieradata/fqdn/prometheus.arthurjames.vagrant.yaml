@@ -15,7 +15,7 @@ apache::apache_version: '2.4'
 
 arthurjames::profile_postgresql::databases:
   grafana:
-    password: 'postgresql_password("grafana", "changeme")'
+    password: 'changeme'
     user: 'grafana'
 arthurjames::profile_postgresql::datadir: '/var/lib/pgsql/data'
 
