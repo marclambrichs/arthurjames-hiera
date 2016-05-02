@@ -3,6 +3,28 @@ classes:
   - arthurjames::role_node
   - arthurjames::role_prometheus
 
+### Roles
+arthurjames::role_prometheus::grafana_enabled: true
+arthurjames::role_prometheus::postgresql_enabled: true
+arthurjames::role_prometheus::prometheus_enabled: true
+
+apache::default_vhost: false
+apache::apache_version: '2.4'
+
+### Profiles
+
+arthurjames::profile_postgresql::databases:
+  grafana:
+    password: 'postgresql_password("grafana", "changeme")'
+    user: 'grafana'
+arthurjames::profile_postgresql::datadir: '/var/lib/pgsql/data'
+
+arthurjames::profile_grafana::db_datadir: '/var/lib/pgsql/data'
+arthurjames::profile_grafana::db_host: '127.0.0.1:5432'
+arthurjames::profile_grafana::db_name: 'grafana'
+arthurjames::profile_grafana::db_user: 'grafana'
+arthurjames::profile_grafana::db_password: 'changeme'
+
 ### Modules
 ntp::servers:
   - ntp.xs4all.nl
