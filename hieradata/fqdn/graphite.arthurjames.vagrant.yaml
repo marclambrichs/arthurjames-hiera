@@ -179,7 +179,6 @@ carbon_c_relay::config_clusters:
 #        port: 2703
 #        alias: 'f'
   local_file:
-    forward_proto: 'file'
     file: '/tmp/ccr.log'
 carbon_c_relay::config_matches:
   '*':
