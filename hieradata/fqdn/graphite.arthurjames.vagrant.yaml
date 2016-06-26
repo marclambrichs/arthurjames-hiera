@@ -186,24 +186,24 @@ carbon_c_relay::config_matches:
     stop: true
 carbon_c_relay::config_rewrites:
   rewrite1:
-    comments: |
-      ## rewrite carbon c relay internal statistics
-      ## from carbon.relays.twiki501.back.test.bc.local.metricsQueued
-      ## into bc.test.twiki.twiki501.relay.metricsQueued
+    comments: 
+      - '## rewrite carbon c relay internal statistics'
+      - '## from carbon.relays.twiki501.back.test.bc.local.metricsQueued'
+      - '## into bc.test.twiki.twiki501.relay.metricsQueued'
     from: '^carbon\.relays\.([a-zA-Z]+)([0-9]*)_([a-zA-Z0-9]+)_([a-zA-Z0-9]+))\.(.*)'
     into: '\2_\3.\1.relay.\4'
   rewrite3:
-    comments: |
-      ## rewrite metrics from statsite
-      ## from sandbox.test.twiki.twiki001.statsite.gauges.gunicorn.workers
-      ## from twiki001.back.test.sandbox.local.statsite.gauges.gunicorn.workers
-      ## into sandbox.test.twiki.twiki001.statsite.gunicorn.gauges.workers
+    comments: 
+      - '## rewrite metrics from statsite'
+      - '## from sandbox.test.twiki.twiki001.statsite.gauges.gunicorn.workers'
+      - '## from twiki001.back.test.sandbox.local.statsite.gauges.gunicorn.workers'
+      - '## into sandbox.test.twiki.twiki001.statsite.gunicorn.gauges.workers'
     from: '^([a-zA-Z0-9]+)\.([a-zA-Z0-9]+)\.([a-zA-Z0-9]+)\.([a-zA-Z]+)([0-9]+)\.statsite\.([a-zA-Z]+)\.([a-zA-Z]+)\.(.*)'
     into: '\1.\2.\3.\4\5.statsite.\7.\6.\8'
   rewrite4:
-    comments: |
-      ## clean up statsite numstats metric
-      ## from sandbox.test.twiki.twiki001.statsite.counts.numStats
-      ## into sandbox.test.twiki.twiki001.statsite.numStats
+    comments:
+      - '## clean up statsite numstats metric'
+      - '## from sandbox.test.twiki.twiki001.statsite.counts.numStats'
+      - '## into sandbox.test.twiki.twiki001.statsite.numStats'
     from: '^([a-zA-Z0-9]+)\.([a-zA-Z0-9]+)\.([a-zA-Z0-9]+)\.([a-zA-Z]+)([0-9]+)\.statsite\.counts\.(.*)'
     into: '\1.\2.\3.\4\5.statsite.\6'
