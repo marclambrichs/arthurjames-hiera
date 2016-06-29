@@ -1,0 +1,16 @@
+---
+arthurjames::notify::message: This is icinga.arthurjames.vagrant
+
+classes:
+  - arthurjames::role_node
+  - apache
+
+### Roles
+
+### Modules
+ntp::servers:
+  - ntp.xs4all.nl
+  - ntp2.xs4all.nl
+
+apache::default_vhost: false
+apache::apache_version: '2.4'
