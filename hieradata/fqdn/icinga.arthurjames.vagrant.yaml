@@ -3,9 +3,10 @@ arthurjames::notify::message: This is icinga.arthurjames.vagrant
 
 classes:
   - arthurjames::role_node
-  - apache
+  - arthurjames::role_icinga2
 
 ### Roles
+arthurjames::role_icinga2::icinga2_enabled: true
 
 ### Modules
 ntp::servers:
