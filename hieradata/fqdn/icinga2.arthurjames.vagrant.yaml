@@ -1,5 +1,5 @@
 ---
-arthurjames::notify::message: This is icinga.arthurjames.vagrant
+arthurjames::notify::message: This is icinga2.arthurjames.vagrant
 
 classes:
   - arthurjames::role_node
