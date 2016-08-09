@@ -9,6 +9,11 @@ profile_collectd::package_ensure: '5.1.0'
 
 arthurjames::role_neo4j::neo4j_enabled: true
 
+### Modules
+ntp::servers:
+  - ntp.xs4all.nl
+  - ntp2.xs4all.nl
+
 neo4j::address: '0.0.0.0'
 neo4j::version: '2.3.2'
 neo4j::edition: 'enterprise'
